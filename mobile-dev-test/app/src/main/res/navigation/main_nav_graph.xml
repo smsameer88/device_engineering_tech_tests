@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/newsFragment">
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.cleanarchitecturenews.ui.NewsFragment"
+        android:label="coins_fragment"
+        tools:layout="@layout/news_fragment">
+        <action
+            android:id="@+id/action_newsFragment_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment">
+            <argument
+                android:name="author"
+                app:argType="string" />
+            <argument
+                android:name="url"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailsFragment"
+        android:name="com.cleanarchitecturenews.ui.NewsDetailsFragment"
+        android:label="NewsDetailsFragment"
+        tools:layout="@layout/news_details_fragment">
+            <argument
+                android:name="author"
+                app:argType="string" />
+            <argument
+                android:name="url"
+                app:argType="string" />
+    </fragment>
+</navigation>

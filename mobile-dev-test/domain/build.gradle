@@ -1,0 +1,19 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt'
+
+    //Hilt
+    implementation "com.google.dagger:hilt-core:2.41"
+
+    //Testing
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "com.google.truth:truth:1.1.3"
+    testImplementation 'org.mockito:mockito-core:4.3.1'
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
